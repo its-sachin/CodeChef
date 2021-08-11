@@ -1,7 +1,11 @@
 for _ in range(int(input())):
     n,p,k = map(int,input().split())
-    r=p%k
-    num=n//k
-    if(n%k>=r):
-        num+=1
-    print(r*num + p//k + 1)
+    n-=1
+    t=(n%k)+1
+    l=p%k
+    d=(n//k)+1
+    if(t>=l):
+        a=l*d
+    else:
+        a=(t*d)+((d-1)*(l-t))
+    print(a+(p//k)+1)
